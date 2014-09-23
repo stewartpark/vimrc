@@ -22,7 +22,7 @@ autocmd FileType make setlocal noexpandtab
 
 " Vundle setup
 filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/.vim/bundle/vundle
 call vundle#begin()
 
 Bundle 'gmarik/vundle'
@@ -44,6 +44,9 @@ Bundle 'bling/vim-bufferline'
 
 " Syntax checking
 Bundle 'scrooloose/syntastic'
+
+" Auto completion
+Bundle 'Valloric/YouCompleteMe'
 
 " Various color schemes
 Bundle 'flazz/vim-colorschemes'

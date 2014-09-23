@@ -9,7 +9,9 @@ unlink:
 	rm -rf $$HOME/.vimrc
 
 install: link download_fonts 
+	git clone https://github.com/gmarik/vundle ./vim/bundle/vundle
 	vim +PluginInstall +qall
+	cd vim/bundle/YouCompleteMe; ./install.sh
 	echo "Installation completed."
 
 uninstall: unlink 
