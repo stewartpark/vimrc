@@ -9,6 +9,7 @@ set fileformat=unix
 set encoding=utf-8 fileencodings=ucs-bom,utf-8,cp949,korea,iso-2022-kr
 set mouse=a
 
+set backspace=indent,eol,start
 
 " Default tab setup
 set tabstop=4 shiftwidth=4 softtabstop=4 expandtab
