@@ -6,7 +6,7 @@ My personal Vim configuration.
 It includes:
 
   - Vundle setup
-  - Font setup (Source Code Pro)
+  - Font setup (Input, http://input.fontbureau.com)
   - Various color schemes
   - vim-syntastic (syntax checking)
   - vim-gitgutter
@@ -14,5 +14,4 @@ It includes:
   - vim-bufferline
   - vim-virtualenv
   - NERDTree
-
 

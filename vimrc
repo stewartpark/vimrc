@@ -58,7 +58,7 @@ filetype plugin indent on
 
 
 " GUI setup
-set guifont=Source\ Code\ Pro:h15
+set guifont=Input:h18
 try
     color Monokai
 catch 
