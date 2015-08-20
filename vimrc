@@ -53,6 +53,9 @@ Bundle 'Valloric/YouCompleteMe'
 " Various color schemes
 Bundle 'flazz/vim-colorschemes'
 
+" Various syntaxes
+Plugin 'kchmck/vim-coffee-script'
+
 " Don't delete the lines below.
 call vundle#end()
 filetype plugin indent on
