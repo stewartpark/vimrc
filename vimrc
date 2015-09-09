@@ -8,6 +8,7 @@ set nocompatible
 set fileformat=unix
 set encoding=utf-8 fileencodings=ucs-bom,utf-8,cp949,korea,iso-2022-kr
 set mouse=a
+set number
 
 set backspace=indent,eol,start
 
