@@ -94,6 +94,13 @@ if has("gui_running")
   endif
 endif
 
+" If there's ag,
+if executable('ag')
+    set grepprg=ag\ --nogroup\ --nocolor
+    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+    let g:ctrlp_use_caching = 0
+endif
+
 " Tab key-binding
 map <D-S-]> gt
 map <D-S-[> gT
