@@ -57,6 +57,12 @@ Bundle 'flazz/vim-colorschemes'
 " Various syntaxes
 Plugin 'kchmck/vim-coffee-script'
 
+" Fuzzy finder
+Plugin 'kien/ctrlp.vim'
+
+" Git
+Plugin 'tpope/vim-fugitive'
+
 " Don't delete the lines below.
 call vundle#end()
 filetype plugin indent on
@@ -76,6 +82,17 @@ let g:airline#extensions#tabline#enabled = 1
 
 " NERDTree shortcut
 command Tree :NERDTree
+
+" Font setup
+if has("gui_running")
+  if has("gui_gtk2")
+      set guifont=Roboto\ Mono\ 13
+  elseif has("gui_macvim")
+      set guifont=Roboto\ Mono:h13
+  elseif has("gui_win32")
+      set guifont=Roboto\ Mono:h13:cANSI
+  endif
+endif
 
 " Tab key-binding
 map <D-S-]> gt
