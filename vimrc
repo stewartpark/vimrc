@@ -46,10 +46,10 @@ Bundle 'jmcantrell/vim-virtualenv'
 Bundle 'bling/vim-bufferline'
 
 " Syntax checking
-Bundle 'scrooloose/syntastic'
+" Bundle 'scrooloose/syntastic'
 
 " Auto completion
-Bundle 'Valloric/YouCompleteMe'
+" Bundle 'Valloric/YouCompleteMe'
 
 " Various color schemes
 Bundle 'flazz/vim-colorschemes'
@@ -58,10 +58,13 @@ Bundle 'flazz/vim-colorschemes'
 Plugin 'kchmck/vim-coffee-script'
 
 " Fuzzy finder
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 
 " Git
 Plugin 'tpope/vim-fugitive'
+
+" Surrounding 
+Plugin 'tpope/vim-surround'
 
 " Don't delete the lines below.
 call vundle#end()
