@@ -69,6 +69,9 @@ Plugin 'tpope/vim-surround'
 " Semantic highlighting
 Plugin 'jaxbot/semantic-highlight.vim'
 
+" Whitespace highlighting
+Plugin 'ntpeters/vim-better-whitespace'
+
 " Don't delete the lines below.
 call vundle#end()
 filetype plugin indent on
@@ -120,3 +123,6 @@ map <D-7> 7gt
 map <D-8> 8gt
 map <D-9> 9gt
 map <D-0> :tablast<CR>
+
+" Whitespace color
+highlight ExtraWhitespace ctermbg=red
