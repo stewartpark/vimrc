@@ -66,6 +66,9 @@ Plugin 'tpope/vim-fugitive'
 " Surrounding 
 Plugin 'tpope/vim-surround'
 
+" Semantic highlighting
+Plugin 'jaxbot/semantic-highlight.vim'
+
 " Don't delete the lines below.
 call vundle#end()
 filetype plugin indent on
@@ -73,7 +76,7 @@ filetype plugin indent on
 
 " GUI setup
 try
-    color Monokai
+    color Chasing_Logic
 catch 
     color default
 endtry
