@@ -23,6 +23,15 @@ autocmd FileType python setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 autocmd FileType jade setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType make setlocal noexpandtab
 
+" Delete all trailing whitespaces before saving.
+autocmd BufWritePre *.py :%s/\s\+$//e
+autocmd BufWritePre *.js :%s/\s\+$//e
+autocmd BufWritePre *.json :%s/\s\+$//e
+autocmd BufWritePre *.html :%s/\s\+$//e
+autocmd BufWritePre *.css :%s/\s\+$//e
+autocmd BufWritePre *.c :%s/\s\+$//e
+autocmd BufWritePre *.cc :%s/\s\+$//e
+
 " Vundle setup
 filetype off
 set rtp+=~/.vim/bundle/vundle
