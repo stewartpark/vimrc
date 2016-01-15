@@ -55,10 +55,10 @@ Bundle 'jmcantrell/vim-virtualenv'
 Bundle 'bling/vim-bufferline'
 
 " Syntax checking
-" Bundle 'scrooloose/syntastic'
+Bundle 'scrooloose/syntastic'
 
 " Auto completion
-" Bundle 'Valloric/YouCompleteMe'
+Bundle 'Valloric/YouCompleteMe'
 
 " Various color schemes
 Bundle 'flazz/vim-colorschemes'
@@ -80,6 +80,9 @@ Plugin 'jaxbot/semantic-highlight.vim'
 
 " Whitespace highlighting
 Plugin 'ntpeters/vim-better-whitespace'
+
+" Python import sort
+Plugin 'fisadev/vim-isort'
 
 " Don't delete the lines below.
 call vundle#end()
