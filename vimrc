@@ -95,6 +95,9 @@ Plugin 'Shougo/vimproc.vim'
 " VimShell
 Plugin 'Shougo/vimshell.vim'
 
+" Python better syntax
+Plugin 'hdima/python-syntax'
+
 " Don't delete the lines below.
 call vundle#end()
 filetype plugin indent on
