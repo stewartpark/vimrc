@@ -107,6 +107,9 @@ Plugin 'tpope/vim-speeddating'
 " Org mode
 Plugin 'jceb/vim-orgmode'
 
+" Elm syntax
+Plugin 'lambdatoast/elm.vim'
+
 " Don't delete the lines below.
 call vundle#end()
 filetype plugin indent on
