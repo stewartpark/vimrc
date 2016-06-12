@@ -6,7 +6,7 @@ My personal NeoVim configuration.
 It includes:
 
   - Vundle setup
-  - Font setup (Input, http://input.fontbureau.com)
+  - Font setup (Roboto Mono)
   - Various color schemes
   - vim-syntastic (syntax checking)
   - vim-gitgutter
@@ -15,4 +15,4 @@ It includes:
   - vim-virtualenv
   - VimFiler
   - VimShell
-
+  - vim-orgmode

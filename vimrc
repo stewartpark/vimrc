@@ -42,25 +42,25 @@ call vundle#begin()
 Bundle 'gmarik/vundle'
 
 " Better status line
-Bundle 'bling/vim-airline'
+Plugin 'itchyny/lightline.vim'
 
 " Git integration
-Bundle 'airblade/vim-gitgutter'
+Plugin 'airblade/vim-gitgutter'
 
 " Python virtualenv integration
-Bundle 'jmcantrell/vim-virtualenv'
+Plugin 'jmcantrell/vim-virtualenv'
 
 " Bufferline
-Bundle 'bling/vim-bufferline'
+Plugin 'bling/vim-bufferline'
 
 " Syntax checking
-Bundle 'scrooloose/syntastic'
+Plugin 'scrooloose/syntastic'
 
 " Auto completion
-Bundle 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 
 " Various color schemes
-Bundle 'flazz/vim-colorschemes'
+Plugin 'flazz/vim-colorschemes'
 
 " Various syntaxes
 Plugin 'kchmck/vim-coffee-script'
@@ -101,6 +101,12 @@ Plugin 'hdima/python-syntax'
 " Autotag
 Plugin 'craigemery/vim-autotag'
 
+" Speeddating
+Plugin 'tpope/vim-speeddating'
+
+" Org mode
+Plugin 'jceb/vim-orgmode'
+
 " Don't delete the lines below.
 call vundle#end()
 filetype plugin indent on
@@ -112,11 +118,29 @@ try
 catch
     color default
 endtry
-let &t_Co=256
 
-" For vim-airline
+" For lightline
 set laststatus=2
-let g:airline#extensions#tabline#enabled = 1
+if !has('gui_running')
+  set t_Co=256
+endif
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component': {
+      \   'readonly': '%{&filetype=="help"?"":&readonly?"RO":""}',
+      \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
+      \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
+      \ },
+      \ 'component_visible_condition': {
+      \   'readonly': '(&filetype!="help"&& &readonly)',
+      \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
+      \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
+      \ }
+      \ }
 
 " VimFiler shortcut
 command Tree :VimFilerExplorer
@@ -151,7 +175,7 @@ endif
 " CtrlP setup
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlPLastMode'
-let g:ctrlp_extensions = ['buffertag', 'tag', 'line', 'dir']
+let g:ctrlp_extensions = ['tag', 'line']
 if executable('ag')
     set grepprg=ag\ --nogroup\ --nocolor
     let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
@@ -175,5 +199,6 @@ map <D-0> :tablast<CR>
 " Whitespace color
 highlight ExtraWhitespace ctermbg=red
 
+" Length color
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 match OverLength /\%81v.\+/
