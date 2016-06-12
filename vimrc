@@ -98,6 +98,9 @@ Plugin 'Shougo/vimshell.vim'
 " Python better syntax
 Plugin 'hdima/python-syntax'
 
+" Autotag
+Plugin 'craigemery/vim-autotag'
+
 " Don't delete the lines below.
 call vundle#end()
 filetype plugin indent on
@@ -130,10 +133,9 @@ function! s:vimfiler_settings()
     nnoremap <buffer> <C-r> <Plug>(vimfiler_redraw_screen)
     nmap <buffer> ' <Plug>(vimfiler_toggle_mark_current_line)
     nmap <buffer> <C-q> <Plug>(vimfiler_quick_look)
-    nmap <buffer> <C-w> <Plug>(vimfiler_switch_to_history_directory)
+    nmap <buffer> <C-s> <Plug>(vimfiler_switch_to_history_directory)
     set nonumber
 endfunction
-
 
 " Font setup
 if has("gui_running")
@@ -146,7 +148,10 @@ if has("gui_running")
   endif
 endif
 
-" If there's ag,
+" CtrlP setup
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlPLastMode'
+let g:ctrlp_extensions = ['buffertag', 'tag', 'line', 'dir']
 if executable('ag')
     set grepprg=ag\ --nogroup\ --nocolor
     let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
