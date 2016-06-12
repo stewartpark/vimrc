@@ -1,6 +1,6 @@
 "
-"   .vimrc 
-"       Stewart Park <stewartpark92@gmail.com>
+"   .vimrc
+"       Stewart Park <hello@stewartjpark.com>
 "
 
 syntax on
@@ -20,11 +20,13 @@ autocmd FileType html setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType yaml setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType python setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
+autocmd FileType ruby setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType jade setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType make setlocal noexpandtab
 
 " Delete all trailing whitespaces before saving.
 autocmd BufWritePre *.py :%s/\s\+$//e
+autocmd BufWritePre *.rb :%s/\s\+$//e
 autocmd BufWritePre *.js :%s/\s\+$//e
 autocmd BufWritePre *.json :%s/\s\+$//e
 autocmd BufWritePre *.html :%s/\s\+$//e
@@ -72,7 +74,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 " Git
 Plugin 'tpope/vim-fugitive'
 
-" Surrounding 
+" Surrounding
 Plugin 'tpope/vim-surround'
 
 " Semantic highlighting
@@ -92,7 +94,7 @@ filetype plugin indent on
 " GUI setup
 try
     color Chasing_Logic
-catch 
+catch
     color default
 endtry
 let &t_Co=256
@@ -138,3 +140,6 @@ map <D-0> :tablast<CR>
 
 " Whitespace color
 highlight ExtraWhitespace ctermbg=red
+
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%81v.\+/
