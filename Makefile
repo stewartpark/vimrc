@@ -7,14 +7,14 @@ link:	unlink
 	ln -sf `pwd`/vimrc $$HOME/.vimrc
 	ln -sf `pwd`/vim $$HOME/.vim
 	ln -sf `pwd`/vim $$HOME/.nvim
-	ln -sf `pwd`/vimrc `pwd`/init.vim
+	ln -sf `pwd`/vimrc `pwd`/vim/init.vim
 
 unlink:
 	rm -rf $$HOME/.vim
 	rm -rf $$HOME/.vimrc
 
 install: dir link setup_fonts 
-	git clone https://github.com/gmarik/vundle ./vim/bundle/vundle
+	if [ ! -d ./vim/bundle/vundle ]; then git clone https://github.com/gmarik/vundle ./vim/bundle/vundle; fi
 	vim +PluginInstall +qall
 	cd vim/bundle/YouCompleteMe; ./install.sh
 	cd vim/bundle/vimproc.vim; make
