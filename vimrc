@@ -47,9 +47,6 @@ Bundle 'bling/vim-airline'
 " Git integration
 Bundle 'airblade/vim-gitgutter'
 
-" NERD Tree
-Bundle 'scrooloose/nerdtree.git'
-
 " Python virtualenv integration
 Bundle 'jmcantrell/vim-virtualenv'
 
@@ -86,6 +83,18 @@ Plugin 'ntpeters/vim-better-whitespace'
 " Python import sort
 Plugin 'fisadev/vim-isort'
 
+" Unite.vim
+Plugin 'Shougo/unite.vim'
+
+" VimFiler
+Plugin 'Shougo/vimfiler.vim'
+
+" Vimproc
+Plugin 'Shougo/vimproc.vim'
+
+" VimShell
+Plugin 'Shougo/vimshell.vim'
+
 " Don't delete the lines below.
 call vundle#end()
 filetype plugin indent on
@@ -103,8 +112,8 @@ let &t_Co=256
 set laststatus=2
 let g:airline#extensions#tabline#enabled = 1
 
-" NERDTree shortcut
-command Tree :NERDTree
+" VimFiler shortcut
+command Tree :VimFilerExplorer
 
 " Font setup
 if has("gui_running")

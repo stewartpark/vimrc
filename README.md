@@ -1,7 +1,7 @@
 vimrc
 =====
 
-My personal Vim configuration.
+My personal NeoVim configuration.
 
 It includes:
 
@@ -13,5 +13,6 @@ It includes:
   - vim-airline
   - vim-bufferline
   - vim-virtualenv
-  - NERDTree
+  - VimFiler
+  - VimShell
 
