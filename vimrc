@@ -149,7 +149,7 @@ let g:vimfiler_tree_opened_icon = "▽"
 let g:vimfiler_tree_closed_icon = "▶"
 let g:vimfiler_tree_leaf_icon = "⋮"
 let g:vimfiler_ignore_pattern = '\%(.pyc\)$\|'.
-    \ '^\%(.git\|.DS_Store\|__pycache__\)$'
+    \ '^\%(.\|..\|.git\|.DS_Store\|__pycache__\)$'
 
 autocmd FileType vimfiler call s:vimfiler_settings()
 
