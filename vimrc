@@ -89,12 +89,6 @@ Plugin 'Shougo/unite.vim'
 " VimFiler
 Plugin 'Shougo/vimfiler.vim'
 
-" Vimproc
-Plugin 'Shougo/vimproc.vim'
-
-" VimShell
-Plugin 'Shougo/vimshell.vim'
-
 " Python better syntax
 Plugin 'hdima/python-syntax'
 
