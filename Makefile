@@ -16,7 +16,7 @@ unlink:
 install: dir link setup_fonts
 	if [ ! -d ./vim/bundle/vundle ]; then git clone https://github.com/gmarik/vundle ./vim/bundle/vundle; fi
 	vim +PluginInstall +qall
-	cd vim/bundle/YouCompleteMe; ./install.sh
+	cd vim/bundle/YouCompleteMe; ./install.py
 	echo "Installation completed."
 
 uninstall: unlink
