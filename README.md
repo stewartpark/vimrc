@@ -14,5 +14,4 @@ It includes:
   - vim-bufferline
   - vim-virtualenv
   - VimFiler
-  - VimShell
   - vim-orgmode
