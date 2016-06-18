@@ -12,6 +12,9 @@ set number
 
 set backspace=indent,eol,start
 
+" Python support
+let g:python_host_prog='/usr/bin/python'
+
 " Default tab setup
 set tabstop=4 shiftwidth=4 softtabstop=4 expandtab
 
