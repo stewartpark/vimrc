@@ -15,3 +15,4 @@ It includes:
   - vim-virtualenv
   - VimFiler
   - vim-orgmode
+  - Ack
