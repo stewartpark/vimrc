@@ -1,4 +1,5 @@
 OS = $(shell uname)
+PYTHON = $(shell PATH=/usr/local/bin:/usr/bin:/bin which python)
 
 dir:
 	mkdir -p ./vim/bundle
@@ -20,7 +21,7 @@ unlink:
 install: dir link setup_fonts
 	if [ ! -d ./vim/bundle/vundle ]; then git clone https://github.com/gmarik/vundle ./vim/bundle/vundle; fi
 	vim +PluginInstall +qall
-	cd vim/bundle/YouCompleteMe; ./install.py
+	cd vim/bundle/YouCompleteMe; $(PYTHON) ./install.py
 	echo "Installation completed."
 
 uninstall: unlink

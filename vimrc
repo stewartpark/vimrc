@@ -12,8 +12,9 @@ set number
 
 set backspace=indent,eol,start
 
-" Python support
-let g:python_host_prog='/usr/bin/python'
+" Neovim: Python support
+" Find the global python and use it
+let g:python_host_prog=system('PATH=/usr/local/bin:/usr/bin:/bin which python')
 
 " Default tab setup
 set tabstop=4 shiftwidth=4 softtabstop=4 expandtab
@@ -107,6 +108,9 @@ Plugin 'jceb/vim-orgmode'
 " Elm syntax
 Plugin 'lambdatoast/elm.vim'
 
+" Ack
+Plugin 'mileszs/ack.vim'
+
 " Don't delete the lines below.
 call vundle#end()
 filetype plugin indent on
@@ -183,6 +187,11 @@ if executable('ag')
     set grepprg=ag\ --nogroup\ --nocolor
     let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
     let g:ctrlp_use_caching = 0
+endif
+
+" Ack setup
+if executable('ag')
+    let g:ackprg = 'ag --vimgrep'
 endif
 
 " Tab key-binding
