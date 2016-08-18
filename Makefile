@@ -8,14 +8,14 @@ link:	unlink
 	ln -sf `pwd`/vim $$HOME/.vim
 	ln -sf `pwd`/vim $$HOME/.nvim
 	ln -sf `pwd`/vimrc `pwd`/vim/init.vim
-	ln -sf `pwd`/vim $$HOME/.config/nvim
+	mkdir -p $$HOME/.config && ln -sf `pwd`/vim $$HOME/.config/nvim
 
 unlink:
 	rm -f $$HOME/.nvim/init.vim
 	rm -f $$HOME/.vim
 	rm -f $$HOME/.nvim
 	rm -f $$HOME/.vimrc
-	rm -f $$HOME/.config/nvim
+	rm -f $$HOME/.config/nvim || true
 
 install: dir link setup_fonts
 	if [ ! -d ./vim/bundle/vundle ]; then git clone https://github.com/gmarik/vundle ./vim/bundle/vundle; fi
