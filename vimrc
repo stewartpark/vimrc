@@ -45,8 +45,9 @@ call vundle#begin()
 
 Bundle 'gmarik/vundle'
 
-" Better status line
-Plugin 'itchyny/lightline.vim'
+" Airline
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 " Git integration
 Plugin 'airblade/vim-gitgutter'
@@ -62,9 +63,6 @@ Plugin 'scrooloose/syntastic'
 
 " Auto completion
 Plugin 'Valloric/YouCompleteMe'
-
-" Various color schemes
-Plugin 'flazz/vim-colorschemes'
 
 " Various syntaxes
 Plugin 'kchmck/vim-coffee-script'
@@ -111,6 +109,9 @@ Plugin 'lambdatoast/elm.vim'
 " Ack
 Plugin 'mileszs/ack.vim'
 
+" Gruvbox theme
+Plugin 'morhetz/gruvbox'
+
 " Don't delete the lines below.
 call vundle#end()
 filetype plugin indent on
@@ -118,33 +119,20 @@ filetype plugin indent on
 
 " GUI setup
 try
-    color Chasing_Logic
+    set background=dark
+    color gruvbox
 catch
     color default
 endtry
 
-" For lightline
+" For Airline
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+
 set laststatus=2
 if !has('gui_running')
   set t_Co=256
 endif
-let g:lightline = {
-      \ 'colorscheme': 'wombat',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
-      \ },
-      \ 'component': {
-      \   'readonly': '%{&filetype=="help"?"":&readonly?"RO":""}',
-      \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
-      \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
-      \ },
-      \ 'component_visible_condition': {
-      \   'readonly': '(&filetype!="help"&& &readonly)',
-      \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
-      \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
-      \ }
-      \ }
 
 " VimFiler shortcut
 command Tree :VimFilerExplorer
